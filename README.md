@@ -1,6 +1,19 @@
-# pokee
-A robust, speedy and simple Pokédex, made with ❤️ using Rust (backend) and ReactJS (frontend)  
-![image 100](https://user-images.githubusercontent.com/54673205/169497380-1cf12f9d-d45d-4ac9-a4c3-eb7500dea619.png)
+<div align="center">
+
+  <img src="https://user-images.githubusercontent.com/54673205/169507707-07bcd3d1-5f62-4e1d-9e5f-d700ede5a5ec.png" width="300" height="300">
+
+  <h1>Pokee</h1>
+ 
+  <br/>
+  A robust, speedy and simple Pokédex, made with ❤️ using Rust (backend) and ReactJS (frontend)  <br/>
+  
+  <br/>
+  
+  [![Coverage Status](https://coveralls.io/repos/github/brunogrcsada/pokee/badge.svg?branch=main&t=Qks2yQ)](https://coveralls.io/github/brunogrcsada/pokee?branch=main)
+ 
+  ![image 100](https://user-images.githubusercontent.com/54673205/169497380-1cf12f9d-d45d-4ac9-a4c3-eb7500dea619.png)
+  
+</div>
 
 ## :heavy_exclamation_mark: Prerequisites
 
