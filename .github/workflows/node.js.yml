@@ -35,13 +35,3 @@ jobs:
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Puppeteer E2E tests
-        uses: actions/setup-node@v1
-        with:
-          node-version: "17"
-      - run: sudo apt update
-      - run: sudo apt install -y libpangocairo-1.0-0 libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxi6 libxtst6 libnss3 libcups2 libxss1 libxrandr2 libasound2 libatk1.0-0 libgtk-3-0 libgconf-2-4 libdrm2 libgbm-dev
-      - run: npm install -g serve
-      - run: npm run build
-      - run: PORT=4221 serve -s build & npm run test:e2e
