@@ -9,6 +9,7 @@ mod tests;
 use actix_cors::Cors;
 use actix_web::{get, http, web, App, HttpResponse, HttpServer};
 
+// {query} is replaced by the Pokemon name the user requests
 #[get("/pokemon/{query}")]
 async fn index(poke: web::Path<String>) -> HttpResponse {
     // Store dynamic path (name of Pokemon), as a string
@@ -22,6 +23,7 @@ async fn index(poke: web::Path<String>) -> HttpResponse {
     response::send(query, data).await
 }
 
+// Start web server with CORS configuration, on HOST 0.0.0.0 and PORT 2020
 #[actix_rt::main]
 async fn main() -> std::io::Result<()> {
     let url = "0.0.0.0:2020";
@@ -29,8 +31,10 @@ async fn main() -> std::io::Result<()> {
 
     HttpServer::new(move || {
         let cors = Cors::default()
+            // Specify which addresses the server can be accessed from
             .allowed_origin("http://localhost:3001")
             .allowed_origin("http://localhost:2020")
+            .allowed_origin("http://localhost:4221")
             .allowed_methods(vec!["GET"])
             .allowed_headers(vec![http::header::CONTENT_TYPE, http::header::ACCEPT]);
         App::new().wrap(cors).service(index)

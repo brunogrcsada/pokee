@@ -1,18 +1,12 @@
 use crate::response::{PokeError, PokeResult};
 use serde::Deserialize;
 
+// Type definitions for data queried from PokeAPI
 #[derive(Deserialize, Debug, PartialEq)]
 pub struct Response {
     pub description: String,
     pub legendary: bool,
     pub image: String,
-}
-
-#[derive(Deserialize)]
-struct Descriptions {
-    flavor_text_entries: Vec<Entry>,
-    is_legendary: bool,
-    id: i16,
 }
 
 #[derive(Deserialize, Debug)]
@@ -25,6 +19,18 @@ struct Entry {
 struct Language {
     name: String,
 }
+
+#[derive(Deserialize)]
+struct Descriptions {
+    flavor_text_entries: Vec<Entry>,
+    is_legendary: bool,
+    id: i16,
+}
+
+/* Custom 'description' function implementation for Descriptions struct:
+Filters through PokeAPI descriptions and returns the first english
+description. The result is cleaned due to hard coded new line values
+on PokeAPI! */
 
 impl Descriptions {
     fn description(&self) -> PokeResult<Response> {
@@ -48,6 +54,7 @@ impl Descriptions {
     }
 }
 
+// Get data from PokeAPI, and catch/resolve errors
 pub async fn query(url: &str) -> PokeResult<Response> {
     let result = reqwest::get(url).await.map_err(|_| PokeError::APIError)?;
 

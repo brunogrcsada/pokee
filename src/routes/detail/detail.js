@@ -19,10 +19,9 @@ const fetchPokemon = async (pokemon) => {
 };
 
 function Detail() {
-  const { pokemon } = useParams();
-
-  const queryClient = useQueryClient();
-  let navigate = useNavigate();
+  const { pokemon } = useParams(); // Get pokemon name from URL
+  const queryClient = useQueryClient(); // React Query client
+  let navigate = useNavigate(); // React Router navigator
 
   // useQuery caches queries in local storage for 24 hours.
   const { isLoading, data, error } = useQuery(
@@ -31,7 +30,13 @@ function Detail() {
     { staleTime: Infinity }
   );
 
-  // Updates cached data with the latest page visit
+  /* Updates cached data with the latest page visit. 
+  This data can be queried on the 'Recent' component or 
+  anywhere else in the app, via a React Query client.
+  Since the data is updated with the latest page load
+  date/time, searches can be sorted by the most recently
+  accessed. */
+
   useEffect(() => {
     if (data && data.error == null) {
       let cached = data;

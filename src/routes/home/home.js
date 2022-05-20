@@ -1,6 +1,9 @@
+// Components
 import Recent from "../../components/recent/recent";
 import Search from "../../components/search/search";
 import Switch from "../../components/switch/switch";
+
+// CSS
 import "./home.css";
 
 function Home() {
@@ -16,12 +19,12 @@ function Home() {
           src="images/logo.svg"
           alt="Pokémon Logo"
         />
-        <div className="wrapper">
-          <Search data-testid="searchBar" />
+        <div className="wrapper" data-testid="searchBar">
+          <Search />
         </div>
 
-        <div className="homeRecent">
-          <Recent data-testid="recentSearches" />
+        <div className="homeRecent" data-testid="recentSearches">
+          <Recent />
         </div>
       </div>
     </div>

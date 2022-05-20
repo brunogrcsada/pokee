@@ -2,6 +2,11 @@
 import "./switch.css";
 
 function Switch() {
+  // Store the state of dark/light mode in local storage
+
+  /* Ideally, I would also check for browser/system preferences 
+  and combine that with the local storage value. */
+
   const switcher = () => {
     localStorage.setItem(
       "dark",

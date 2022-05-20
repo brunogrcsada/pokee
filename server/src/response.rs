@@ -5,14 +5,16 @@ use serde::{Deserialize, Serialize};
 
 use crate::query::Response;
 
+// Type definition for the JSON object that is returned to the client
 #[derive(Deserialize, Serialize, Debug, PartialEq)]
 pub struct FinalResponse {
-    pub name: String,
-    pub description: String,
-    pub is_legendary: bool,
-    pub image: String,
+    pub name: String,        // Pokemon's name
+    pub description: String, // Pokemon's description
+    pub is_legendary: bool,  // Legendary status for the Pokemon
+    pub image: String,       // Image URL from PokeAPI
 }
 
+// Error messages for different scenarios
 #[derive(thiserror::Error, Debug, PartialEq)]
 pub enum PokeError {
     #[error("PokéAPI Internal Server Error!")]
@@ -25,6 +27,7 @@ pub enum PokeError {
     NoDescription,
 }
 
+// Matching status codes with the PokeError descriptors
 impl PokeError {
     pub fn descriptor(&self) -> String {
         match self {
@@ -36,16 +39,22 @@ impl PokeError {
     }
 }
 
+// Server error message (a json object with an error key)
 #[derive(Deserialize, Serialize, PartialEq, Debug)]
 pub struct StatusBuilder {
     pub error: Error,
 }
 
+// Full definition for sending the error to the client
 #[derive(Deserialize, Serialize, PartialEq, Debug)]
 pub struct Error {
     pub code: String,
     pub message: String,
 }
+
+/* Custom ResponseError implementation for PokeError ->
+This brings the custom messages and status codes together,
+with constant HTTP status codes */
 
 impl ResponseError for PokeError {
     fn status_code(&self) -> StatusCode {
@@ -61,18 +70,13 @@ impl ResponseError for PokeError {
         let message = self.to_string();
         let code = self.descriptor().to_string();
 
-        // HttpResponse::Ok().json(StatusBuilder {
-        //     error: Error { code, message },
-        // })
-
-        // Prevent unecessary console error:
-
         HttpResponse::build(self.status_code()).json(StatusBuilder {
             error: Error { code, message },
         })
     }
 }
 
+// Send data back to the client
 pub async fn send(name: &str, data: PokeResult<Response>) -> HttpResponse {
     match data {
         Ok(data) => HttpResponse::Ok().json(FinalResponse {
