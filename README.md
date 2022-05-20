@@ -73,7 +73,7 @@ npm start
 Runs the app in the development mode. :point_up_2: \
 Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
 
-The page will reload when you make changes.\
+The page will reload when you make changes.
 
 ### 3. To run any tests written for the backend, run the following command:
 
