@@ -1,0 +1,24 @@
+.Error {
+  background: #f9f9f9;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat" !important;
+  gap: 60px;
+}
+
+.notFoundImage {
+  max-width: 900px;
+}
+
+.goBack {
+  padding: 10px 20px;
+  border: 4px solid #333333;
+  border-radius: 49px;
+
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 400;
+}

@@ -1,0 +1,15 @@
+.luckyWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lucky {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+[src="images/pikachu.svg"] {
+  width: 60px;
+}

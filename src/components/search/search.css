@@ -1,0 +1,90 @@
+.searchWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+
+  border-radius: 25px;
+  padding: 5px 20px;
+}
+
+.searchWrap:focus-within {
+  box-shadow: 0px 0px 8px #88888838;
+  outline-color: rgb(143, 143, 240);
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  background: url(../../../public/images/x.svg) no-repeat 50% 50%;
+
+  -webkit-appearance: none;
+  height: 1em;
+  width: 1em;
+
+  border-radius: 50em;
+  background-size: contain;
+  pointer-events: none;
+
+  opacity: 0;
+}
+
+input[type="search"]:focus::-webkit-search-cancel-button {
+  opacity: 0.3;
+  pointer-events: all;
+}
+
+.dark input[type="search"]::-webkit-search-cancel-button {
+  filter: invert(1);
+}
+
+#searchIcon {
+  font-size: 28px;
+}
+
+#search {
+  width: 100%;
+  height: 45px;
+
+  background-color: transparent;
+
+  border: none;
+  outline-color: none;
+  border-radius: 20px;
+
+  font-family: inherit;
+  font-size: 15px;
+  padding: 0px 15px;
+}
+
+#search::placeholder {
+  font-size: 15px;
+}
+
+#search:focus {
+  outline-style: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.dark #searchIcon {
+  color: rgb(226, 226, 226);
+}
+
+.dark .searchWrap {
+  background-color: #515151;
+}
+
+.dark ::placeholder {
+  color: rgb(194, 194, 194);
+}
+
+.pokeball {
+  aspect-ratio: 1;
+  width: 35px;
+  height: 35px;
+}
+
+.dark input {
+  color: white;
+}

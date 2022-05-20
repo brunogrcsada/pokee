@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  height: 100%;
+  background: inherit;
+  transition: all 0.5s;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#root {
+  height: 100%;
+}
+
+.dark {
+  background: #414141;
+  color: #f0f0f0;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: normal;
+  src: local("Montserrat"),
+    url(../public/fonts/Montserrat-Regular.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-weight: 700;
+  src: local("Montserrat"),
+    url(../public/fonts/Montserrat-Medium.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: bolder;
+  font-weight: 800;
+  src: local("Montserrat"),
+    url(../public/fonts/Montserrat-Bold.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../public/fonts/MaterialIconsRound-Regular.otf) format("opentype");
+}
+
+.material {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 34px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  color: #727272;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+html {
+  height: 100%;
+  font-family: "Montserrat";
+}
