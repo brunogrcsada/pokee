@@ -9,11 +9,26 @@
   
   <br/>
   
-  [![Coverage Status](https://coveralls.io/repos/github/brunogrcsada/pokee/badge.svg?branch=main&t=Qks2yQ)](https://coveralls.io/github/brunogrcsada/pokee?branch=main)
- 
-  ![image 100](https://user-images.githubusercontent.com/54673205/169497380-1cf12f9d-d45d-4ac9-a4c3-eb7500dea619.png)
-  
 </div>
+
+## 🗒️ Overview:
+
+### ○ Which parts are you most proud of? Why?
+
+I am quite proud of the Rust backend, since I was able to implement all of the requirements to grab information from the PokéAPI whilst ensuring strict types, memory safety, and high performance. The compiled binary is also tiny! I really enjoyed designing with Figma and implementing the streamlined UI I created for the app; it’s responsive for a variety of screen sizes, whilst displaying key information (with images) for all Pokémon, with accessibility and ease of use in mind; and the best feature: dark mode, with persistence through local storage, because I don’t want to blind innocent TrueLayer employees.
+
+### ○ Where did you spend more time? What was the most difficult?
+
+I spent most of my time working on the backend, to ensure that any errors were considered and handled correctly, alongside working on some automated tests (testing is not documented incredibly well for some of the actix libraries). The workflow yml file with GitHub actions and the “all-in-one” Dockerfile with multiple stages also required some experimentation and research, since I wanted to bundle both the backend and frontend in one repo, without a lot of fiddling with commands from another developer contributing or trying to host the project.
+
+### ○ How did you find the test overall? Did you have issues or difficulties completing it?
+
+Overall, the test was fun and engaging; given the 1 week hand-in window, it was definitely challenging to implement everything on time to my typical standards; I did not put as much time into writing the amount of tests I would typically be content with, and there is definitely some further optimisation I can make on both the front and backend. However, the entire platform just feels fast and robust, and I would love to take it further and add more features and information to the Pokédex. Here is a screenshot of some future ideas I would like to work on:
+
+![Component 1 (19)](https://user-images.githubusercontent.com/54673205/169543004-dbd648ef-7d72-4146-9eaf-8e611bf6ad36.png)
+
+All of this data is available on PokéAPI, meaning that I would only have to make one extra request to get any remaining information about a Pokémon’s health, height, weight, type, and a lot more! I would also include favourites, sharing and Pokémon collections as a roadmap.
+
 
 ## :heavy_exclamation_mark: Prerequisites
 
