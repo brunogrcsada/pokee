@@ -11,8 +11,7 @@ jobs:
           node-version: "17"
       - run: npm install
       - run: npm test -- --coverage --watchAll=false
-      - run: cd server
-      - run: cargo test
+      - run: cd server && cargo test
 
       - name: Tests ✅
         if: ${{ success() }}
