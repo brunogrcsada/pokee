@@ -1,0 +1,7 @@
+server/target/
+node_modules
+build
+README.md
+.dockerignore
+Dockerfile
+Dockerfile.prod
