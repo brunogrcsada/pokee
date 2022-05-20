@@ -62,6 +62,15 @@ Now, you should have everything that you need to proceed! Navigate into the fold
   
 ## :book: Getting Started
 
+### Docker
+
+You can run a single docker image for the back and frontend with the following commands:
+
+```sh
+docker build -t pokee .
+docker run -p 2020:2020 -p 3001:3001 pokee
+```
+
 ### 0. Before trying out any of the other commands:
 
 ```sh
@@ -123,6 +132,11 @@ Builds the app for production to the `build` folder. :point_up_2: \
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+```sh
+cd server
+cargo start
+```
 
 ```sh
 PORT=4221 serve -s build & npm run test:e2e
