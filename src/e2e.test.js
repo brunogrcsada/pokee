@@ -24,7 +24,7 @@ describe("General end-user flow test, with Puppeteer", () => {
         "Find a Pokémon..."
       );
       expect(await page.$eval(".pokeball", (e) => e.src)).toBe(
-        "http://localhost:3001/favicon/favicon-32x32.png"
+        "http://localhost:4221/favicon/favicon-32x32.png"
       );
       expect(await page.$eval(".pokeball", (e) => e.alt)).toBe("random");
     });
