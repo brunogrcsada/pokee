@@ -14,7 +14,7 @@ import "./detail.css";
 
 // Fetches Pokémon information from backend
 const fetchPokemon = async (pokemon) => {
-  const res = await fetch(`http://localhost:2020/pokemon/${pokemon}`);
+  const res = await fetch(`https://pokee-services.up.railway.app/pokemon/${pokemon}`);
   return res.json();
 };
 
