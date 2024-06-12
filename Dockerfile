@@ -1,4 +1,4 @@
-FROM rust:1.63.0 AS builder
+FROM rust:1.65.0 AS builder
 
 RUN useradd -ms /bin/bash pokee
 USER pokee
