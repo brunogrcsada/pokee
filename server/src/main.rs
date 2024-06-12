@@ -35,6 +35,7 @@ async fn main() -> std::io::Result<()> {
             .allowed_origin("http://localhost:3001")
             .allowed_origin("http://localhost:2020")
             .allowed_origin("http://localhost:4221")
+            .allowed_origin("https://pokee-production.up.railway.app")
             .allowed_methods(vec!["GET"])
             .allowed_headers(vec![http::header::CONTENT_TYPE, http::header::ACCEPT]);
         App::new().wrap(cors).service(index)
