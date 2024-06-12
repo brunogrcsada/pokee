@@ -34,6 +34,8 @@ RUN npm install -g serve
 
 COPY --from=0 /home/pokee/backend/target/release/pokee ./
 
+COPY serve.json /frontend/build/serve.json
+
 CMD (serve -l tcp://0.0.0.0:3001 -s build &) && ./pokee
 
 EXPOSE 3001
